@@ -40,4 +40,10 @@ countries = response.xpath("//td/a/text()").getall()
 ```bash
 # from the root folder of the project (same level as scrapy.cfg)
 scrapy crawl countries
+
+```
+
+### Section 4 - Spiders
+```bash
+
 ```
