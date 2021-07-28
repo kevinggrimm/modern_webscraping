@@ -18,10 +18,10 @@ class BestMoviesSpider(CrawlSpider):
     def parse_item(self, response):
         # print(response.url)
         yield {
-            'title': response.xpath("//div[@class='title_wrapper']/h1/text()").get(),
-            'year': response.xpath("").get(),
-            'duration': response.xpath("//h1/text()").get(),
-            'genre': response.xpath("//h1/text()").get(),
-            'rating': response.xpath("//h1/text()").get(),
-            'movie_url': response.xpath("//h1/text()").get(),
+            'title': response.xpath("//h1[contains(@class,'TitleHeader')]/text()").get(),
+            'year': response.xpath("//span[starts-with(@class,'TitleBlockMetaData')]//text()").get(),
+            'duration': response.xpath("//li[contains(text(),'min') and contains(@role, 'presentation')]/text()").get(),
+            'genre': response.xpath("//a[starts-with(@class,'GenresAndPlot')]/span/text()").get(),
+            'rating': response.xpath("//span[contains(@class,'RatingScore')]/text()").get(),
+            'movie_url': response.url
         }
