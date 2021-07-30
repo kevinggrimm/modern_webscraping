@@ -170,4 +170,13 @@ udemy course - Modern Web Scraping with Python using Scrapy Splash Selenium
 - `descendant` - children and grandchildren of element
 
 
-## Project 1 - Spiders from A to Z
+## Scraping APIs
+- `quotestoscrape.com/scroll`
+- To check for APIs, go to *Network* tab, filter to *XHR* requests
+- **XHR** stands for *XML and HTTP requests*
+### Notes
+- API URL will typically be different from website URL
+- When scraping APIs, *always use the base template*
+    - If you use a separate template, you cannot define the Rule object
+    - Most of the time, there are no links to follow
+- Flesh out the API structure before assembling scraper
